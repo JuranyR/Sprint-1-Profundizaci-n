@@ -1,0 +1,56 @@
+.chats__container {
+    width: 580px;
+    @include scrollBar;
+    .chats__header {
+        @include header;
+        &__avatar {
+            border: none;
+            @include avatar (40px, 40px);
+            img {
+                @include img;
+            }
+        }
+    }
+    .chats__search {
+        @include search;
+    }
+    .chats {
+        height: calc(100vh - 115px);
+        overflow-y: scroll;
+        &__item {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 10px 12px;
+            width: 100%;
+            &:before {
+                content: '';
+                position: absolute;
+                width: 80%;
+                bottom: 0;
+                left: 50px;
+                right: 50px;
+                border-bottom: 1px solid #999;
+                opacity: 0.2;
+            }
+            &.select {
+                background-color: #ebebeb;
+            }
+            &__avatar {
+                @include avatar (50px, 50px);
+                img {
+                    @include img;
+                }
+            }
+            &__info {
+                flex: 10;
+                margin-left: 15px;
+                @include infoText (13px);
+            }
+            &__time {
+                @include date;
+            }
+        }
+    }
+}

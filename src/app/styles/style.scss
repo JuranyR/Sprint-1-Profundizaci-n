@@ -1,0 +1,18 @@
+@import './mixins.scss';
+@import './login.scss';
+@import './chats-container.scss';
+@import './message-container.scss';
+@import './edit-profile.scss';
+@import './search-chat.scss';
+
+* {
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.body {
+    display: flex;
+    overflow: hidden;
+}

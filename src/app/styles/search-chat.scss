@@ -1,0 +1,29 @@
+.search__chat {
+    right: 0;
+    @include contentOffCanvas(100%,#F0EEF1,60px,#333333);
+    &__body {
+       background-color: #f3f3f3;
+       height: 100%; 
+       .chats__search {
+            @include search;
+       }
+       .result__search {
+            background: white;
+            padding: 20px;
+            margin-bottom: 3px;
+            &__date {
+                @include date;
+            }
+            &__message {
+                display: flex;
+                align-items: center;
+                img {
+                    width: 15px;
+                }
+                p {
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+}

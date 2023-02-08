@@ -1,0 +1,174 @@
+.message__container {
+    width: 100%;
+    display: unset;
+    @include scrollBar;
+    .message__header__container {
+        @include header;
+        .message__header__left {
+            display: flex;
+            align-items: center;
+            &__close {
+                display: none;
+            }
+            &__info {
+                display: flex;
+                align-items: center;
+                &__avatar {
+                    @include avatar (40px, 40px);
+                    img {
+                        @include img
+                    }
+                }
+                &__content {
+                    margin-left: 15px;
+                    @include infoText(10px);
+                }
+            }
+        }
+        .message__header__right {
+            outline: none;
+            border: none;
+            img {
+                @include icon;
+            }
+        }
+    }
+    .content {
+        padding: 20px 80px;
+        overflow-y: scroll;
+        height: calc(100vh - 120px);
+        background-image: url('../asset/backgroundchat.png');
+        background-position: center;
+        &__day {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            p {
+                background-color: #E4F3F8;
+                padding: 6px;
+                border-radius: 5px;
+                font-size: 13px;
+            }
+        }
+        &__me {
+            position: relative;
+            &__actions {
+                @include actions;
+            }
+            &__actions.hide + div:before {
+                left: -12px;
+                @include corner (white, 236deg, 0px);
+            }
+            &__actions + div:before {
+                left: -12px;
+                @include corner (white, 236deg, 24px);
+            }
+        }
+        &__sent {
+            position:relative;
+            display: flex;
+            flex-direction: column;
+            &__actions {
+                margin-left: auto;
+                @include actions;
+            }
+            &__actions.hide + div:before {
+                right: -12px;
+                @include corner(#dcf8c6, 136deg, 0px);
+            }
+            &__actions + div:before {
+                right: -12px;
+                @include corner(#dcf8c6, 136deg, 24px);
+            }
+        }
+        &__message {
+            font-size: 14px;
+            padding: 8px 10px;
+            width: fit-content;
+            border-radius: 8px;
+            background-color: white;
+            margin-bottom: 30px;
+            input {
+                display: block;
+                &.hide {
+                    display: none;
+                }
+            }
+            span.hide {
+                display: none;
+            }
+            &__time {
+               margin-top: 3px; 
+               font-size: 10px;
+               color: gray;
+               display: flex;
+               align-items: center;
+               justify-content: end;
+               img {
+                    width: 13px;
+               }
+            }
+        }
+        &__chat__sent {
+            margin-left: auto;
+            background-color: #dcf8c6;
+        }
+    }
+    .message__footer {
+        background-color: #f0f0f0;
+        display: flex;
+        align-items: center;
+        padding: 5px 10px;
+        img { 
+            @include icon
+        }
+        input {
+            width: 100%;
+            margin: 5px 10px;
+            padding: 12px 15px;
+            outline: none;
+            border: none;
+            border-radius: 20px;
+            font-size: 15px;
+        }
+    }
+}
+@media (max-width: 900px) {
+    .message__container {
+        .content {
+            padding: 20px 30px;
+        }
+    }
+}
+@media (max-width: 600px) {
+    .message__container {
+        display: none;
+        .message__header__container {
+            .message__header__left {
+                &__close {
+                    display: flex;
+                    border: none;
+                    outline: 0;
+                    margin-right: 10px;
+                    img {
+                        width: 20px;
+                    }
+                }
+                &__content {
+                    @include infoText (13px)
+                }
+            }
+        }
+        .content {
+            &__message {
+                &__time {
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+    .chat-mobile {
+        position: absolute;
+        top: 0;
+    }
+}
