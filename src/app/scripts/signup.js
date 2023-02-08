@@ -14,7 +14,7 @@ document.getElementById('url').addEventListener('input', function (evt) {
 });
 
 // valida el envio del registro
-const URLUsers = 'http://localhost:3000/users';
+const URLUsers = 'https://sprint1p-server-production.up.railway.app/users';
 
 document.getElementById('sentData').addEventListener('click', async (event)=>{
     event.preventDefault();

@@ -3,7 +3,7 @@ import { getDataMessage, searchChat, sendData } from './chat'
 import Swal from 'sweetalert2';
 
 const userLogin = JSON.parse(sessionStorage.getItem('login'));
-const URLUsers = 'http://localhost:3000/users/';
+const URLUsers = 'https://sprint1p-server-production.up.railway.app/users/';
 
 //abre o cierra perfil
 const profile= document.getElementById('edit-profile');
@@ -86,7 +86,10 @@ export const clickChats= () =>{
     // cargar mensaje o abrir mobile
     const loadMessage = async (e) => {
         const chatItem= e.target.closest('.chats__item');
-        const element = document.querySelectorAll('.select')[0].classList.remove('select')
+        if(document.querySelectorAll('.select').length>0){
+            const element = document.querySelectorAll('.select')[0].classList.remove('select')
+            
+        }
         
         if(chatItem){
             chatItem.classList.add('select')

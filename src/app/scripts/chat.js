@@ -7,8 +7,8 @@ import { clickChats, actionsMessage, dataProfile } from './interactividad-chat';
 import axios from 'axios';
 import { DateTime } from "luxon";
 
-const URLMessages = 'http://localhost:3000/messages';
-const URLUsers = 'http://localhost:3000/users';
+const URLMessages = 'https://sprint1p-server-production.up.railway.app/messages';
+const URLUsers = 'https://sprint1p-server-production.up.railway.app/users';
 const userLogin = JSON.parse(sessionStorage.getItem('login'));
 
 const getMyMessages = async (user, search) =>{

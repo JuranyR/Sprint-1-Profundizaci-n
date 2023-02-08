@@ -3,7 +3,7 @@ import Swal from 'sweetalert2';
 import axios from 'axios';
 
 // valida el envio de inicio de sesión
-const URLUsers = 'http://localhost:3000/users';
+const URLUsers = 'https://sprint1p-server-production.up.railway.app/users';
 
 document.getElementById('signin').addEventListener('click', async (event)=>{
     event.preventDefault();
