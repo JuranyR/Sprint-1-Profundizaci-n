@@ -48,7 +48,7 @@ document.getElementById('sentData').addEventListener('click', async (event)=>{
             ).then((result) => {
                 if (result.isConfirmed) {
                     sessionStorage.setItem('login', JSON.stringify(responsePost.data));
-                    location.pathname = '/chat.html';
+                    location.pathname = './chat.html';
                 }
             });
         }else{

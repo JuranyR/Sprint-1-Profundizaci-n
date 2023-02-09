@@ -26,7 +26,7 @@ document.getElementById('signin').addEventListener('click', async (event)=>{
             ).then((result) => {
                 if (result.isConfirmed) {
                     sessionStorage.setItem('login', JSON.stringify(response.data[0]));
-                    location.pathname = '/chat.html';
+                    location.pathname = './chat.html';
                 }
             });
         }else{
